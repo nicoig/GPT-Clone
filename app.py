@@ -41,7 +41,7 @@ if user_input := st.chat_input():
   st.session_state["messages"].append({"role": "user", "content": user_input})
   st.chat_message("user").write(user_input)
   response = openai.ChatCompletion.create(
-    model="gpt-4",
+    model="gpt-4-1106-preview",
     messages=st.session_state["messages"]
   )
   responseMessage = response['choices'][0]['message']['content']
