@@ -33,7 +33,7 @@ openai.api_key = os.getenv("OPENAI_API_KEY")
 st.title("ChatGPT Clon")
 
 if "messages" not in st.session_state:
-  st.session_state["messages"] = [{"role": "assistant", "content": "Hola, soy ChatGPT, ¿En qué puedo ayudarte?"}]
+  st.session_state["messages"] = [{"role": "assistant", "content": "Hola amo Nicolás Guerra, ¿En qué puedo ayudarte?"}]
 
 for msg in st.session_state["messages"]:
   st.chat_message(msg["role"]).write(msg["content"])
