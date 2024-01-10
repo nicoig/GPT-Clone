@@ -81,12 +81,17 @@ with col3:
         
 
 if "messages" not in st.session_state:
+<<<<<<< HEAD
     st.session_state["messages"] = [{"role": "assistant", "content": "Hola, soy ChatGPT, ¿En qué puedo ayudarte?"}]
+=======
+  st.session_state["messages"] = [{"role": "assistant", "content": "Hola amo Nicolás Guerra, ¿En qué puedo ayudarte?"}]
+>>>>>>> 50d4957c132d6057ec7e64fe5911324673b1497c
 
 for msg in st.session_state["messages"]:
     st.chat_message(msg["role"]).write(msg["content"])
 
 if user_input := st.chat_input():
+<<<<<<< HEAD
     st.session_state["messages"].append({"role": "user", "content": user_input})
     st.chat_message("user").write(user_input)
 
@@ -98,3 +103,14 @@ if user_input := st.chat_input():
         responseMessage = response['choices'][0]['message']['content']
         st.session_state["messages"].append({"role": "assistant", "content": responseMessage})
         st.chat_message("assistant").write(responseMessage)
+=======
+  st.session_state["messages"].append({"role": "user", "content": user_input})
+  st.chat_message("user").write(user_input)
+  response = openai.ChatCompletion.create(
+    model="gpt-4-1106-preview",
+    messages=st.session_state["messages"]
+  )
+  responseMessage = response['choices'][0]['message']['content']
+  st.session_state["messages"].append({"role": "assistant", "content": responseMessage})
+  st.chat_message("assistant").write(responseMessage)
+>>>>>>> 50d4957c132d6057ec7e64fe5911324673b1497c
