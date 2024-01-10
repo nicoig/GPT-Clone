@@ -1,5 +1,4 @@
 openai==0.28
 streamlit
 python-dotenv
-base64
 FPDF
